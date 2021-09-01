@@ -12,7 +12,7 @@
         "url": "https://github.com/rpeshkov/vscode-text-tables"
     },
     "engines": {
-        "vscode": "^1.45.0"
+        "vscode": "^1.54.0"
     },
     "categories": [
         "Formatters",
@@ -27,6 +27,7 @@
     "activationEvents": [
         "onLanguage:markdown",
         "onLanguage:org",
+        "onLanguage:restructuredtext",
         "onCommand:text-tables.enable"
     ],
     "main": "./out/src/extension",
@@ -113,6 +114,10 @@
             }
         },
         "keybindings": [
+            {
+                "command": "text-tables.createTable",
+                "key": "ctrl+q ctrl+t"
+            },
             {
                 "command": "text-tables.formatUnderCursor",
                 "key": "ctrl+q ctrl+f"

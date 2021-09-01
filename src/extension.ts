@@ -6,6 +6,7 @@ import * as cmd from './commands';
 import { OrgLocator, OrgParser, OrgStringifier } from './ttOrg';
 import { Locator, Parser, Stringifier, Table } from './ttTable';
 import { MarkdownLocator, MarkdownParser, MarkdownStringifier } from './ttMarkdown';
+import { ReStructuredTextLocator, ReStructuredTextParser, ReStructuredTextStringifier } from './ttReStructuredText';
 import { isUndefined } from 'util';
 import { registerContext, ContextType, enterContext, exitContext, restoreContext } from './context';
 import * as cfg from './configuration';
@@ -23,9 +24,9 @@ function loadConfiguration() {
         parser = new OrgParser();
         stringifier = new OrgStringifier();
     } else {
-        locator = new MarkdownLocator();
-        parser = new MarkdownParser();
-        stringifier = new MarkdownStringifier();
+        locator = new ReStructuredTextLocator();
+        parser = new ReStructuredTextParser();
+        stringifier = new ReStructuredTextStringifier();
     }
 }
 

@@ -7,7 +7,8 @@ export const showStatusKey = 'showStatus';
 
 export enum Mode {
     Org = 'org',
-    Markdown = 'markdown'
+    Markdown = 'markdown',
+    ReStructuredText = 'restructuredtext'
 }
 
 export interface Configuration {
@@ -19,7 +20,7 @@ export function build(): Configuration {
     const c = vscode.workspace.getConfiguration(section);
 
     return {
-        mode: c.get<Mode>(modeKey, Mode.Markdown),
+        mode: c.get<Mode>(modeKey, Mode.ReStructuredText),
         showStatus: c.get<boolean>(showStatusKey, true)
     };
 }
